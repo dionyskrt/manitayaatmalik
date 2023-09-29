@@ -29,7 +29,7 @@
 
     function artir() {
       sevgiMiktari++;
-      // Kalp animasyonunu başlat
+
       animasyonuBaslat();
     }
 
@@ -37,22 +37,22 @@
       if (sevgiMiktari > 0) {
         sevgiMiktari--;
       } else {
-        // Hata pop-up'ını göster
+        
         document.getElementById("hataMesaji").innerHTML = "Böyle bir şey imkansız.";
         document.getElementById("hataPopUp").style.display = "flex";
       }
     }
 
     function kapatHata() {
-      // Hata pop-up'ını kapat
+      
       document.getElementById("hataPopUp").style.display = "none";
     }
 
     function animasyonuBaslat() {
-      // Kalp animasyonunu göster
+      
       const kalp = document.querySelector('.kalp');
       kalp.style.display = 'inline-block';
-      // Animasyon bitiminde kalbi gizle
+      
       kalp.addEventListener('animationend', () => {
         kalp.style.display = 'none';
       });
