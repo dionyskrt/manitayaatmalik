@@ -1,0 +1,90 @@
+body {
+    font-family: 'Arial', sans-serif;
+    text-align: center;
+    margin: 73px;
+  }
+
+  #sevgiMesaji {
+    font-size: 24px;
+    margin-bottom: 20px;
+    font-weight: bold; /* Fontu kalın (bold) yapar */
+    font-family: 'Montserrat', sans-serif; /* Fontu Montserrat olarak ayarladık */
+  }
+
+  #butonlar {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 20px;
+  }
+
+  .buton {
+    padding: 10px 20px;
+    margin: 0 10px;
+    font-size: 16px;
+    cursor: pointer;
+  }
+
+  #artirButon {
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+  }
+
+  #azaltButon {
+    background-color: #f44336;
+    color: white;
+    border: none;
+  }
+
+  #hataPopUp {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    justify-content: center;
+    align-items: center;
+  }
+
+  #hataKutusu {
+    background-color: white;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.5);
+    text-align: center;
+  }
+
+  #hataMesaji {
+    color: #f44336;
+    font-size: 18px;
+    margin-bottom: 20px;
+  }
+
+  .kapatButon {
+    background-color: #ccc;
+    color: black;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+  }
+
+  .kalp {
+    display: none;
+    font-size: 36px;
+    color: red;
+    animation: kalpAnimasyonu 1s ease-out;
+  }
+
+  @keyframes kalpAnimasyonu {
+    0% {
+      transform: scale(1);
+    }
+    50% {
+      transform: scale(1.5);
+    }
+    100% {
+      transform: scale(1);
+    }
+  }

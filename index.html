@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sevgi Sitesi</title>
+  <link rel="stylesheet" href="main.css">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap">
+</head>
+<body>
+
+  <div id="sevgiMesaji">Sana olan sevgimi <span class="kalp">❤</span></div>
+
+  <div id="butonlar">
+    <button id="artirButon" class="buton" onclick="artir()">Artır</button>
+    <button id="azaltButon" class="buton" onclick="azalt()">Azalt</button>
+  </div>
+
+  <div id="hataPopUp">
+    <div id="hataKutusu">
+      <div id="hataMesaji"></div>
+      <button class="kapatButon" onclick="kapatHata()">Kapat</button>
+    </div>
+  </div>
+
+  <script>
+    let sevgiMiktari = 0;
+
+    function artir() {
+      sevgiMiktari++;
+      // Kalp animasyonunu başlat
+      animasyonuBaslat();
+    }
+
+    function azalt() {
+      if (sevgiMiktari > 0) {
+        sevgiMiktari--;
+      } else {
+        // Hata pop-up'ını göster
+        document.getElementById("hataMesaji").innerHTML = "Böyle bir şey imkansız.";
+        document.getElementById("hataPopUp").style.display = "flex";
+      }
+    }
+
+    function kapatHata() {
+      // Hata pop-up'ını kapat
+      document.getElementById("hataPopUp").style.display = "none";
+    }
+
+    function animasyonuBaslat() {
+      // Kalp animasyonunu göster
+      const kalp = document.querySelector('.kalp');
+      kalp.style.display = 'inline-block';
+      // Animasyon bitiminde kalbi gizle
+      kalp.addEventListener('animationend', () => {
+        kalp.style.display = 'none';
+      });
+    }
+  </script>
+</body>
+</html>
