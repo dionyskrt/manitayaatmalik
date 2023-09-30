@@ -3,10 +3,9 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>sevgi sitesi</title>
+  <title>Sevgi Sitesi</title>
   <link rel="stylesheet" href="main.css">
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap">
-  <link rel="shortcut icon" href="https://w7.pngwing.com/pngs/52/631/png-transparent-heart-icon-transparent-background-vector-image-vector-art-vector-heart-red-heart-icon-heart-symbol-heart-valentines-day-birthday-wishes.png"/>
 </head>
 <body>
 
@@ -26,36 +25,37 @@
 
   <script>
     let sevgiMiktari = 0;
+    let animasyonDevamEdiyor = false;
 
     function artir() {
+      if (animasyonDevamEdiyor) return;
+      
       sevgiMiktari++;
-
       animasyonuBaslat();
     }
 
     function azalt() {
-      if (sevgiMiktari > 0) {
-        sevgiMiktari--;
-      } else {
-        
-        document.getElementById("hataMesaji").innerHTML = "Böyle bir şey imkansız.";
-        document.getElementById("hataPopUp").style.display = "flex";
-      }
+      if (animasyonDevamEdiyor) return;
+
+     
+      document.getElementById("hataMesaji").innerHTML = "Böyle bir şey imkansız.";
+      document.getElementById("hataPopUp").style.display = "flex";
     }
 
     function kapatHata() {
-      
       document.getElementById("hataPopUp").style.display = "none";
     }
 
     function animasyonuBaslat() {
-      
+      animasyonDevamEdiyor = true;
+
       const kalp = document.querySelector('.kalp');
       kalp.style.display = 'inline-block';
-      
-      kalp.addEventListener('animationend', () => {
+
+      setTimeout(() => {
         kalp.style.display = 'none';
-      });
+        animasyonDevamEdiyor = false;
+      }, 1000);
     }
   </script>
 </body>
