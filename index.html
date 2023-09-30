@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="">
+<html lang="tr">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -9,7 +9,7 @@
 </head>
 <body>
 
-  <div id="sevgiMesaji">Sana olan sevgimi <span class="kalp">❤</span></div>
+  <div id="sevgiMesaji">X'e olan sevgimi <span class="kalp">❤</span></div>
 
   <div id="butonlar">
     <button id="artirButon" class="buton" onclick="artir()">Artır</button>
@@ -22,6 +22,10 @@
       <button class="kapatButon" onclick="kapatHata()">Kapat</button>
     </div>
   </div>
+
+  <footer>
+    <button id="degistirButon" onclick="sevgiMesajiDegistir()">Mesajı Değiştir</button>
+  </footer>
 
   <script>
     let sevgiMiktari = 0;
@@ -37,7 +41,6 @@
     function azalt() {
       if (animasyonDevamEdiyor) return;
 
-     
       document.getElementById("hataMesaji").innerHTML = "Böyle bir şey imkansız.";
       document.getElementById("hataPopUp").style.display = "flex";
     }
@@ -55,8 +58,16 @@
       setTimeout(() => {
         kalp.style.display = 'none';
         animasyonDevamEdiyor = false;
-      }, 1000);
+      }, 1000); 
+    }
+
+    function sevgiMesajiDegistir() {
+      const yeniMesaj = prompt("Yeni metni girin:");
+      if (yeniMesaj !== null && yeniMesaj.trim() !== "") {
+        document.getElementById("sevgiMesaji").innerHTML = yeniMesaj + " <span class='kalp'>❤</span>";
+      }
     }
   </script>
+
 </body>
 </html>
